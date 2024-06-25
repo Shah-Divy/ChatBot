@@ -1,38 +1,258 @@
-.App {
-  text-align: center;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #1e1e1e;
+  position: relative;
+  overflow: hidden;
+  color: black;
+  padding: 0 60px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkling 1.5s infinite ease-in-out alternate;
+}
+
+@keyframes twinkling {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40%;
+}
+
+.auth-button {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.content-container {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 265px;
+  margin-bottom: 75px;
+}
+
+.video-container {
+  flex: 1;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 50px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 50px;
+  margin-top: -8px;
+  font-size: 2rem;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.modal-content label {
+  border-radius: 10px;
+  margin: 10px 12px;
+  padding: 10px;
+}
+
+.modal-content input {
+  padding: 8px;
+  margin-top: 4px;
+  margin-left: 5px;
+}
+
+.modal-content button {
+  padding: 10px;
+  background: #555;
   color: white;
+  border: none;
+  cursor: pointer;
+  margin: 20px 75px;
+  border-radius: 7px;
+}
+.modal-content button:hover{
+  border: 1.5px solid black;
+  background: transparent;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.glowing-button {
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 30px 0;
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  margin-right: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.glowing-button:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 200px #03e9f4;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.glowing-button:nth-child(2) {
+  filter: hue-rotate(110deg);
+}
+
+.glowing-button span {
+  position: absolute;
+  display: block;
+}
+
+.glowing-button span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
   }
-  to {
-    transform: rotate(360deg);
+  50%, 100% {
+    left: 100%;
   }
+}
+
+.glowing-button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%;
+  }
+}
+
+.glowing-button span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+
+.glowing-button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
+}
+
+.right-upper-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+}
+
+.left-lower-video {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
 }

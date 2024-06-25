@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:600');
+
+.rotating-text {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #fff; /* Default color */
+  margin-bottom: 20px; /* Space below text */
+}
+
+.rotating-text p {
+  display: inline-flex;
+  margin: 0;
+  vertical-align: top;
+}
+
+.static-text {
+  margin-right: 10px; /* Add gap between static text and changing word */
+}
+
+.word {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+}
+
+.letter {
+  transform-origin: center center 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+}
+
+.letter.in {
+  transition: 0.38s ease;
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+/* Color styles */
+.alizarin {
+  color: #e74c3c; /* Red */
+}
+
+.wisteria {
+  color: #8e44ad; /* Purple */
+}
+
+.peter-river {
+  color: #3498db; /* Blue */
+}
+
+.emerald {
+  color: #2ecc71; /* Green */
+}
+
+.sun-flower {
+  color: #f1c40f; /* Yellow */
+}
