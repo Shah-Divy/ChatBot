@@ -1,0 +1,58 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 50px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 50px;
+    margin-top: -8px;
+    font-size: 2rem;
+  }
+  
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .modal-content label {
+    border-radius: 10px;
+    margin: 10px 12px;
+    padding: 10px;
+  }
+  
+  .modal-content input {
+    padding: 8px;
+    margin-top: 4px;
+    margin-left: 5px;
+  }
+  
+  .modal-content button {
+    padding: 10px;
+    background: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 20px 75px;
+    border-radius: 7px;
+  }
+  .modal-content button:hover{
+    border: 1.5px solid black;
+    background: transparent;
+    color: black;
+  }
+  

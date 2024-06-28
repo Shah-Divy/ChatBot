@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:600');
-
-.rotating-text {
+/* .rotating-text {
   font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 36px;
-  color: #fff; /* Default color */
-  margin-bottom: 20px; /* Space below text */
+  color: #fff; 
+  margin-bottom: 20px; 
 }
 
 .rotating-text p {
@@ -15,7 +13,7 @@
 }
 
 .static-text {
-  margin-right: 10px; /* Add gap between static text and changing word */
+  margin-right: 10px; 
 }
 
 .word {
@@ -41,23 +39,138 @@
   transform: rotateX(-90deg);
 }
 
-/* Color styles */
 .alizarin {
-  color: #e74c3c; /* Red */
+  color: #e74c3c; 
 }
 
 .wisteria {
-  color: #8e44ad; /* Purple */
+  color: #8e44ad; 
 }
 
 .peter-river {
-  color: #3498db; /* Blue */
+  color: #3498db;
 }
 
 .emerald {
-  color: #2ecc71; /* Green */
+  color: #2ecc71; 
 }
 
 .sun-flower {
-  color: #f1c40f; /* Yellow */
+  color: #f1c40f; 
+} */
+.rotating-text {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.rotating-text p {
+  display: inline-flex;
+  margin: 0;
+  vertical-align: top;
+}
+
+.static-text {
+  margin-right: 10px;
+}
+
+.word {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+}
+
+.letter {
+  transform-origin: center center 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+}
+
+.letter.in {
+  transition: 0.38s ease;
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.alizarin {
+  color: #e74c3c;
+}
+
+.wisteria {
+  color: #8e44ad;
+}
+
+.peter-river {
+  color: #3498db;
+}
+
+.emerald {
+  color: #2ecc71;
+}
+
+.sun-flower {
+  color: #f1c40f;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .rotating-text {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 992px) {
+  .rotating-text {
+    font-size: 40px;
+    margin-right: 64px;
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rotating-text {
+    font-size: 34px;
+    margin-right: 48px;
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 576px) {
+  .rotating-text {
+    margin-top: 160px;
+    font-size: 30px;
+    margin-right: 52px;
+  }
+
+  .static-text {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rotating-text {
+    font-size: 23px;
+    margin-right: 44px;
+  }
+
+  .static-text {
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .rotating-text {
+    font-size: 16px;
+  }
+
+  .static-text {
+    margin-right: 4px;
+  }
 }

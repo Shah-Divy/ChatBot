@@ -21,7 +21,7 @@
     padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    box-shadow: 0 0 2px rgb(175,175,175);
+    box-shadow: 0 0 2px rgb(175, 175, 175);
   }
   
   .chatbot-header-content {
@@ -59,8 +59,6 @@
     flex: 1;
     padding: 10px;
     overflow-y: auto;
-    background-color: #EEEEEE;
- 
   }
   
   .chatbot-message {
@@ -70,15 +68,15 @@
     border-radius: 10px;
     max-width: 70%;
     border: 0.5px solid #102C57;
+    clear: both;
+    float: left;
   }
   
   .chatbot-message.user {
     background-color: white;
     color: black;
-    align-self: flex-end;
-    margin-left: 380px;
-    display: inline-block;
-
+    float: right; 
+    clear: both;
   }
   
   .chatbot-options {
@@ -88,18 +86,21 @@
     border-top: none;
     margin-left: -4px;
     max-width: 60%;
+    /* margin-bottom: 130px; */
+    
   }
   
   .chatbot-option {
-    background-color: transparent; 
+    background-color: transparent;
     color: #007bff;
     border: none;
-    margin: 5px; 
+    margin: 5px;
     cursor: pointer;
+    text-align: right;
   }
   
   .chatbot-option:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
   }
   
   input[type=radio] {
@@ -114,22 +115,22 @@
     display: inline-block;
     width: 1em;
     height: 1em;
-    border: 2px solid #102C57; 
+    border: 2px solid #102C57;
     border-radius: 50%;
     margin-right: 0.5em;
   }
   
   input[type=radio]:checked::before {
-    background-color: #007bff; 
+    background-color: #007bff;
   }
   
-  label{
+  label {
     border: 1px solid #102C57;
     border-radius: 10px;
     margin: 5px 2px;
     padding: 5px;
   }
-
+  
   .chatbot-footer {
     background-color: #102C57;
     padding: 30px;
@@ -137,6 +138,35 @@
     border-bottom-right-radius: 10px;
   }
   
-  i{
+  i {
     color: #EEEEEE;
   }
+  
+  @media (max-width: 600px) {
+    .chatbot-container {
+      width: 90%;
+      height: 80%;
+      right: 5%;
+      bottom: 10%;
+    }
+  
+    .chatbot-message.user {
+      margin-left: auto;
+      float: right;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .chatbot-container {
+      width: 94%;
+      height: 80%;
+      right: 3%;
+      bottom: 3%;
+    }
+  
+    .chatbot-message.user {
+      margin-left: auto;
+      float: right;
+    }
+  }
+  
